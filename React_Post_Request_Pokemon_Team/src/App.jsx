@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddPkmn } from "./components/AddPkmn";
 import { PkmnList } from "./components/PkmnList";
 
 function App() {
@@ -68,6 +69,8 @@ function App() {
           )}
         </div>
       </section>
+
+      <AddPkmn />
     </div>
   );
 }

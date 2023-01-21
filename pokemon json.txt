@@ -1,0 +1,46 @@
+{
+    "lanceTeam": [
+        {
+            "name": "Gyarados",
+            "pokedexIndex": "130",
+            "type": "Water/Flying",
+            "generation": "First",
+            "sprite": "https://www.pokencyclopedia.info/sprites/gen1/spr_red-blue_gb/spr_rb-gb_130.png"
+        },
+        {
+            "name": "Dragonair",
+            "pokedexIndex": "148",
+            "type": "Dragon",
+            "generation": "First",
+	    "sprite": "https://www.pokencyclopedia.info/sprites/gen1/spr_red-blue_gb/spr_rb-gb_148.png"
+        },
+        {
+            "name": "Dragonair",
+            "pokedexIndex": "148",
+            "type": "Dragon",
+            "generation": "First",
+            "sprite": "https://www.pokencyclopedia.info/sprites/gen1/spr_red-blue_gb/spr_rb-gb_148.png"
+        },
+	{
+            "name": "Aerodactyl",
+            "pokedexIndex": "142",
+            "type": "Rock/Flying",
+            "generation": "First",
+	    "sprite": "https://www.pokencyclopedia.info/sprites/gen1/spr_red-blue_gb/spr_rb-gb_142.png"
+        },
+	{
+            "name": "Dragonite",
+            "pokedexIndex": "149",
+            "type": "Dragon",
+            "generation": "First",
+	    "sprite": "https://www.pokencyclopedia.info/sprites/gen1/spr_red-blue_gb/spr_rb-gb_149.png"
+        }
+
+
+    ]
+}
+
+
+link:
+
+https://ad42ea69-6901-43e3-a8b4-67bdeeeaf70b.mock.pstmn.io/lance
