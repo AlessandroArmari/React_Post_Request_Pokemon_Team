@@ -63,7 +63,6 @@ function App() {
     setTeam((team) => [...team, newPkmn]); //---> adding newPkmn to the array (Lance's team)
 
     console.log(data);
-    console.log(team);
   };
 
   let content; //NOT CONST--->BECAUSE IT CHANGES

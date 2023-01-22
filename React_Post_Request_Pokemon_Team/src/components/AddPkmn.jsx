@@ -9,6 +9,7 @@ const AddPkmn = (props) => {
   const pokedexIndexRef = useRef("");
   const typeRef = useRef("");
   const generationRef = useRef("");
+  const spriteRef = useRef("");
 
   const submitHandler = (event) => {
     event.preventDefault(); //--->to avoid the "form" issue
@@ -16,10 +17,12 @@ const AddPkmn = (props) => {
     console.log("Data Sent");
 
     const newPkmn = {
-      /*3*/ name: nameRef.current.value,
+      /*3*/
+      name: nameRef.current.value,
       pokedexIndex: pokedexIndexRef.current.value,
       type: typeRef.current.value,
       generation: generationRef.current.value,
+      sprite: spriteRef.current.value,
     };
 
     props.onAddPkmn(newPkmn); //--->props
@@ -46,6 +49,8 @@ const AddPkmn = (props) => {
         placeholder="Generation"
         ref={generationRef}
       />
+      <label htmlFor="sprite">Sprite URL</label>
+      <input type="text" id="sprite" placeholder="Sprite URL" ref={spriteRef} />
       <button>Create Pkmn</button>
     </form>
   );
