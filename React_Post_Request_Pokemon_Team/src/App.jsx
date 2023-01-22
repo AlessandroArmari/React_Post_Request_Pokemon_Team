@@ -40,7 +40,31 @@ function App() {
     setIsLoading(false);
   }
 
-  //+++HERE the function "fetchOrderHandler" ends!
+  //HERE the function "fetchOrderHandler" ends!
+  //(GET)
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  //HERE the function "addPkmnHandler" begins!
+  //(POST)
+
+  const addPkmnHandler = async (newPkmn) => {
+    const response = await fetch(
+      "https://ad42ea69-6901-43e3-a8b4-67bdeeeaf70b.mock.pstmn.io/lance",
+      {
+        method: "POST", //---> the default method is GET. Now we change it to POST
+        body: JSON.stringify(newPkmn), //--->I "gave" to the URL the "stringified" body of the pkmn I created in the component "AddPkmn.jsx"
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    const data = await response.json(); //---> await 200 response
+
+    setTeam((team) => [...team, newPkmn]); //---> adding newPkmn to the array (Lance's team)
+
+    console.log(data);
+    console.log(team);
+  };
 
   let content; //NOT CONST--->BECAUSE IT CHANGES
 
@@ -64,13 +88,16 @@ function App() {
         )}
         {content}
         <div className="buttonSection">
-          {!content && ( //--->IF CONTENT is NUll, shows---> button
+          <button onClick={fetchOrderHandler}>Show Lance Team</button>
+          {/* {!content && ( //--->IF CONTENT is NUll, shows---> button
             <button onClick={fetchOrderHandler}>Show Lance Team</button>
-          )}
+          )} */}
         </div>
       </section>
-
-      <AddPkmn />
+      {/*props--->activate the function addPkmnHandler*/}
+      {team.length != 0 && <AddPkmn onAddPkmn={addPkmnHandler} />}
+      {/*here I avoid to show Create new Pkmn form if the client didn't click "Show Team" yet!
+      Because in that case the variable "team" would consist ONLY in the pkmn I created, */}
     </div>
   );
 }

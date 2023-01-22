@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import "./style/AddPkmn.css";
 
-const AddPkmn = (onAddPkmn) => {
+const AddPkmn = (props) => {
+  //--->props(go to line 22)
+
+  /*1*/ //---> follow the numbers!
   const nameRef = useRef("");
   const pokedexIndexRef = useRef("");
   const typeRef = useRef("");
@@ -13,19 +16,20 @@ const AddPkmn = (onAddPkmn) => {
     console.log("Data Sent");
 
     const newPkmn = {
-      name: nameRef.current.value,
+      /*3*/ name: nameRef.current.value,
       pokedexIndex: pokedexIndexRef.current.value,
       type: typeRef.current.value,
       generation: generationRef.current.value,
     };
 
-    onAddPkmn(newPkmn);
+    props.onAddPkmn(newPkmn); //--->props
+    /*4*/
   };
 
   return (
     <form className="form" onSubmit={submitHandler}>
       <label htmlFor="name">Name</label>
-      <input type="text" id="name" placeholder="Name" ref={nameRef} />
+      <input type="text" id="name" placeholder="Name" ref={nameRef} /> {/*2*/}
       <label htmlFor="pokedexIndex">Number</label>
       <input
         type="text"
